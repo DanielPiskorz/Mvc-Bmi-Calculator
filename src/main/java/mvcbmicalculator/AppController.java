@@ -35,12 +35,31 @@ public class AppController {
 		
 		float bmi = weight / ( (height/100) * (height/100) );
 		
+		
 		Formatter bmiFormatter = new Formatter ();
 		bmiFormatter.format("%.3f", bmi);
-		
 		model.addAttribute("bmi", bmiFormatter);
-		
+		model.addAttribute("scale", scale(bmi));
 		return "result";
 		
+	}
+	
+	static String scale(float bmi){
+		if (bmi < 16){
+			return "<font color='red'>Wyg³odzenie</font>";
+		}else if (bmi < 17){
+			return "<style='color:red'>Wychudzenie.</font>";
+		}else if (bmi < 18.5){
+			return "<font color='orange'>Niedowaga.</font>";
+		}else if (bmi < 25){
+			return "<font color='green'>Waga prawid³owa.</font>";
+		}else if (bmi < 30){
+			return "<font color='orange'>Nadwaga.</font>";
+		}else if (bmi < 35){
+			return "<font color='red'>Oty³oœæ I stopnia.</font>";
+		}else if (bmi < 40){
+			return "<font color='red'>Oty³oœæ II stopnia.</font>";
+		}else{
+			return "<font color='red'>Oty³oœæ skrajna!</font>";}
 	}
 }

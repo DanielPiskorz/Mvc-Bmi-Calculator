@@ -25,6 +25,7 @@
                 <article><center>
                 <h1>Twoje Bmi:</h1>
                 <h2>${bmi}</h2>
+                <h2>${scale}</h2>
                 <form action="http://localhost:8080/mvcbmicalculator/">
                 <input type="submit" value="Powrót">    
                 </form>
