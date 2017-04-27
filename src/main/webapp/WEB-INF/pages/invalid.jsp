@@ -23,11 +23,17 @@
             </header> 
             <section>
                 <article><center>
-                <h1>Twoje Bmi:</h1>
-                <h2>${bmi}</h2>
-                <form action="http://localhost:8080/mvcbmicalculator/">
-                <input type="submit" value="Powrót">    
-                </form>
+                <h1>Witaj w aplikacji!</h1>
+                <h3 style="color:red">Nieprawidłowe dane, proszę wprowadzić liczby.</h3>
+                <form method="post" action="http://localhost:8080/mvcbmicalculator/count">
+                    <p>Podaj wzrost (cm):</p>
+                    <input type="text" name="height">
+                    <br>
+                    <p>Podaj masę ciała (kg):</p>
+                    <input type="text" name="weight">
+                    <br>
+                    <input type="submit" value="Oblicz BMI !">
+                    </form></center>
                 </article>
             </section>
             <footer>

@@ -17,17 +17,29 @@ public class AppController {
 	
 	@RequestMapping(value = "/count", method = RequestMethod.POST)
 	public String countBMI 
-	(ModelMap model, @RequestParam("height") String height,
-			@RequestParam("weight") String weight)
+	(ModelMap model, @RequestParam("height") String inputHeight,
+			@RequestParam("weight") String inputWeight)
 	{
-		float w = Float.parseFloat(weight);
-		float h = Float.parseFloat(height);
+		String heightString = inputHeight.replaceAll(",", ".");
+		String weightString = inputWeight.replaceAll(",", ".");
+		float weight;
+		float height;
 		
-		float bmi = w / ( (h/100) * (h/100) );
+		try{
+		weight = Float.parseFloat(weightString);
+		height = Float.parseFloat(heightString);
+		}catch(NumberFormatException exc){
+			
+			return "invalid";
+		}
+		
+		float bmi = weight / ( (height/100) * (height/100) );
 		
 		Formatter bmiFormatter = new Formatter ();
 		bmiFormatter.format("%.3f", bmi);
+		
 		model.addAttribute("bmi", bmiFormatter);
+		
 		return "result";
 		
 	}
