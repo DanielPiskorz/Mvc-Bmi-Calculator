@@ -46,7 +46,7 @@ public class AppController {
 	
 	static String scale(float bmi){
 		if (bmi < 16){
-			return "<font color='red'>Wyg³odzenie</font>";
+			return "<font color='red'>Wyg³odzenie.</font>";
 		}else if (bmi < 17){
 			return "<style='color:red'>Wychudzenie.</font>";
 		}else if (bmi < 18.5){

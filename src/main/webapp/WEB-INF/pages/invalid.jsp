@@ -5,13 +5,13 @@
     <head>
     
     	<spring:url value="/resources/styles.css" var="styles" />
-    	<spring:url value="/resources/fruits.jpg" var="fruits" />
-    	<!--<spring:url value="/resources/favicon.ico" var="favicon" /> -->
+    	<spring:url value="/resources/banner.jpg" var="banner" />
+    	<spring:url value="/resources/favicon.ico" var="favicon" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device=width, initial-scale=1.0">
         <title>Kalkulator BMI</title>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-      <!--   <link rel="icon" href="${favicon}"> --> 
+        <link rel="icon" href="${favicon}">
         <link rel="stylesheet" href="${styles}">
     </head>
     
@@ -19,7 +19,7 @@
         <div id="wrapper">
             
             <header>
-                <img src="${fruits}" alt="header"><span>Oblicz swoje BMI!</span>
+                <img src="${banner}" alt="header">
             </header> 
             <section>
                 <article><center>
